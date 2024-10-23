@@ -1,0 +1,13 @@
+[world]
+name = "Demo World 3"
+description = "The third demo world"
+entities = ["player"]
+regions = ["base"]
+
+[entity]
+player = { x ="f64", y = "f64" }
+
+[base]
+player = [
+	{ x = 0.0, y = 0.0 }
+]

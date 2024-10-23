@@ -1,10 +1,10 @@
 [workspace]
-name = "onchain"
+name = "position"
 
 [storage]
 repository = "solana"
 
 [solana]
 store = "8npxEZiWoi6zcBQ4Pw2e5enC1Av4UhzA2ZtPn1fKeciU"
-rpc = "https://devnet.sonic.game"
+rpc = "https://devnet.sonic.game/"
 keypair = "/Users/kquirapas/.config/solana/id.json"

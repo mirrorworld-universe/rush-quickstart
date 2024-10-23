@@ -53,7 +53,7 @@ fn input(
     // let mut sdk = BevySDK::new(
     //     "https://devnet.sonic.game".to_string(),
     //     "8npxEZiWoi6zcBQ4Pw2e5enC1Av4UhzA2ZtPn1fKeciU",
-    //     "onchain/blueprint",
+    //     "position/blueprint",
     //     "/Users/kquirapas/.config/solana/id.json",
     // );
 
@@ -63,7 +63,7 @@ fn input(
             position.1 = OFFSET;
 
             // sdk.set(
-            //     "farm".to_string(),
+            //     "base".to_string(),
             //     "player".to_string(),
             //     1,
             //     "y".to_string(),
@@ -74,7 +74,7 @@ fn input(
             position.1 = -OFFSET;
 
             // sdk.set(
-            //     "farm".to_string(),
+            //     "base".to_string(),
             //     "player".to_string(),
             //     1,
             //     "y".to_string(),
@@ -87,7 +87,7 @@ fn input(
             position.0 = -OFFSET;
 
             // sdk.set(
-            //     "farm".to_string(),
+            //     "base".to_string(),
             //     "player".to_string(),
             //     1,
             //     "x".to_string(),
@@ -98,7 +98,7 @@ fn input(
             position.0 = OFFSET;
 
             // sdk.set(
-            //     "farm".to_string(),
+            //     "base".to_string(),
             //     "player".to_string(),
             //     1,
             //     "x".to_string(),
@@ -119,10 +119,10 @@ fn update(mut player_query: Query<(&mut Transform, &Position), With<Player>>) {
     // );
     //
     // let x_value = sdk
-    //     .get("farm".to_string(), "player".to_string(), 1, "x".to_string())
+    //     .get("base".to_string(), "player".to_string(), 1, "x".to_string())
     //     .unwrap();
     // let y_value = sdk
-    //     .get("farm".to_string(), "player".to_string(), 1, "y".to_string())
+    //     .get("base".to_string(), "player".to_string(), 1, "y".to_string())
     //     .unwrap();
     //
     // let x = x_value.unwrap_float();
