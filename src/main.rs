@@ -6,7 +6,7 @@ use bevy::{
 // use rush_ecs_core::blueprint::{Component, ComponentValue};
 // use rush_ecs_sdk::bevy::BevySDK;
 
-const SPEED: f32 = 1000.0;
+const OFFSET: f32 = 100.0;
 
 #[derive(Component)]
 struct Player;
@@ -53,14 +53,14 @@ fn input(
     // let mut sdk = BevySDK::new(
     //     "https://devnet.sonic.game".to_string(),
     //     "8npxEZiWoi6zcBQ4Pw2e5enC1Av4UhzA2ZtPn1fKeciU",
-    //     "focg/blueprint",
+    //     "onchain/blueprint",
     //     "/Users/kquirapas/.config/solana/id.json",
     // );
 
     // check for keypress
     for mut position in &mut player_query {
         if keys.pressed(KeyCode::KeyW) {
-            position.1 += SPEED * time.delta_seconds();
+            position.1 = OFFSET;
 
             // sdk.set(
             //     "farm".to_string(),
@@ -71,7 +71,7 @@ fn input(
             // )
             // .unwrap();
         } else if keys.pressed(KeyCode::KeyS) {
-            position.1 -= SPEED * time.delta_seconds();
+            position.1 = -OFFSET;
 
             // sdk.set(
             //     "farm".to_string(),
@@ -84,7 +84,7 @@ fn input(
         }
 
         if keys.pressed(KeyCode::KeyA) {
-            position.0 -= SPEED * time.delta_seconds();
+            position.0 = -OFFSET;
 
             // sdk.set(
             //     "farm".to_string(),
@@ -95,7 +95,7 @@ fn input(
             // )
             // .unwrap();
         } else if keys.pressed(KeyCode::KeyD) {
-            position.0 += SPEED * time.delta_seconds();
+            position.0 = OFFSET;
 
             // sdk.set(
             //     "farm".to_string(),
@@ -114,9 +114,19 @@ fn update(mut player_query: Query<(&mut Transform, &Position), With<Player>>) {
     // let mut sdk = BevySDK::new(
     //     "https://devnet.sonic.game".to_string(),
     //     "8npxEZiWoi6zcBQ4Pw2e5enC1Av4UhzA2ZtPn1fKeciU",
-    //     "focg/blueprint",
+    //     "onchain/blueprint",
     //     "/Users/kquirapas/.config/solana/id.json",
     // );
+    //
+    // let x_value = sdk
+    //     .get("farm".to_string(), "player".to_string(), 1, "x".to_string())
+    //     .unwrap();
+    // let y_value = sdk
+    //     .get("farm".to_string(), "player".to_string(), 1, "y".to_string())
+    //     .unwrap();
+    //
+    // let x = x_value.unwrap_float();
+    // let y = y_value.unwrap_float();
 
     for (mut transform, position) in &mut player_query {
         transform.translation.x = position.0;
