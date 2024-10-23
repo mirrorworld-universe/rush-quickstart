@@ -1,0 +1,10 @@
+[package]
+name = "rush-bevy-demo"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = "0.14.2"
+rush-ecs-core = "0.1.0"
+rush-ecs-sdk = "0.2.3"
+tokio = "1.41.0"
